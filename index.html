@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfólio — Leonardo</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+
+<!-- ── WELCOME SCREEN ── -->
+<div class="welcome-overlay" id="welcomeOverlay">
+  <div class="welcome-content">
+    <div class="welcome-text" id="welcomeText"></div>
+    <p class="welcome-subtitle">Click anywhere to continue</p>
+    <div class="welcome-images">
+      <div class="welcome-image">
+        <img src="src/imgs/codigo.png" alt="">
+      </div>
+      <div class="welcome-image">
+        <img src="src/imgs/github.png" alt="">
+      </div>
+      <div class="welcome-image">
+        <img src="src/imgs/linkedin.png" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FUNDO ── -->
+<div class="bg-beams" aria-hidden="true">
+  <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="glow1" cx="30%" cy="0%" r="55%">
+        <stop offset="0%" stop-color="#1D4ED8" stop-opacity="0.12"/>
+        <stop offset="100%" stop-color="#1D4ED8" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="glow2" cx="75%" cy="100%" r="45%">
+        <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.07"/>
+        <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="beam1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#3B82F6" stop-opacity="0"/>
+        <stop offset="40%" stop-color="#3B82F6" stop-opacity="0.06"/>
+        <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+      </linearGradient>
+      <linearGradient id="beam2" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#60A5FA" stop-opacity="0"/>
+        <stop offset="50%" stop-color="#60A5FA" stop-opacity="0.04"/>
+        <stop offset="100%" stop-color="#60A5FA" stop-opacity="0"/>
+      </linearGradient>
+      <linearGradient id="beam3" x1="1" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#3B82F6" stop-opacity="0"/>
+        <stop offset="45%" stop-color="#3B82F6" stop-opacity="0.04"/>
+        <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <rect x="0" y="0" width="1440" height="900" fill="url(#glow1)"/>
+    <rect x="0" y="0" width="1440" height="900" fill="url(#glow2)"/>
+    <polygon points="200,-50 340,-50 -60,900 -200,900" fill="url(#beam1)"/>
+    <polygon points="520,-50 600,-50 200,900 120,900" fill="url(#beam2)"/>
+    <polygon points="800,-50 860,-50 460,900 400,900" fill="url(#beam1)"/>
+    <polygon points="1100,-50 1160,-50 760,900 700,900" fill="url(#beam2)"/>
+    <polygon points="1380,-50 1440,-50 1040,900 980,900" fill="url(#beam3)"/>
+    <line x1="280" y1="-10" x2="-120" y2="910" stroke="#3B82F6" stroke-opacity="0.05" stroke-width="0.8"/>
+    <line x1="560" y1="-10" x2="160" y2="910" stroke="#60A5FA" stroke-opacity="0.04" stroke-width="0.5"/>
+    <line x1="900" y1="-10" x2="500" y2="910" stroke="#3B82F6" stroke-opacity="0.04" stroke-width="0.8"/>
+    <line x1="1200" y1="-10" x2="800" y2="910" stroke="#3B82F6" stroke-opacity="0.03" stroke-width="0.5"/>
+  </svg>
+</div>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-logo"><span>~/</span>leonardo</div>
+  <ul class="nav-links">
+    <li><a href="#">Sobre</a></li>
+    <li><a href="#projetos">Projetos</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <button class="theme-toggle" id="themeToggle" aria-label="Trocar tema">
+    <div class="toggle-track"></div>
+    <div class="toggle-circle"><img style="width:80%;height:80%;" src="src/imgs/floco-de-neve.png" alt=""></div>
+  </button>
+</nav>
+
+<main>
+
+<!-- ── HERO ── -->
+<div id="hero">
+  <h1 class="hero-name">Leonardo</h1>
+  <p class="hero-role">
+    Desenvolvedor <strong id="typewriterTarget"></strong><span class="typed-cursor">|</span>
+  </p>
+
+    
+  <div class="about-container">
+    <div class="about-main-block">
+      <div class="about-text-content">
+        <p class="about-hello">Olá, eu sou</p>
+        <p class="about-description">
+          Desenvolvedor Full Stack e estudante na FIAP. Construo sistemas web complexos, dashboards interativos e dispositivos inteligentes com Arduino. Meu foco está em unir código limpo com interfaces marcantes que fazem sentido para quem as usa.
+        </p>
+        <div class="about-actions">
+          <a href="#projetos" class="btn">Ver projetos</a>
+          <a class="btn-secondary" href="#">Download CV</a>
+          <a class="btn-secondary" href="#contato">Contato</a>
+        </div>
+      </div>
+
+      <div class="about-avatar-wrapper">
+        <div class="avatar-ring"></div>
+        <div class="avatar-glow"></div>
+        <div class="avatar-frame">
+          <img src="src/imgs/foto.jpeg" alt="Leonardo">
+        </div>
+      </div>
+    </div>
+
+    <div class="about-stats-grid">
+      <div class="about-card reveal">
+        <div class="card-header">
+          <div class="card-icon">&lt;/&gt;</div>
+          <span class="card-number">4+</span>
+        </div>
+        <div class="card-body">
+          <h4>Total Projects</h4>
+          <p>Soluções ponta a ponta do back ao front-end.</p>
+        </div>
+        <div class="card-arrow">↗</div>
+      </div>
+
+      <div class="about-card reveal">
+        <div class="card-header">
+          <div class="card-icon">🏅</div>
+          <span class="card-number">7+</span>
+        </div>
+        <div class="card-body">
+          <h4>Certificates</h4>
+          <p>Habilidades técnicas validadas e aprendizado contínuo.</p>
+        </div>
+        <div class="card-arrow">↗</div>
+      </div>
+
+      <div class="about-card reveal">
+        <div class="card-header">
+          <div class="card-icon">⏳</div>
+          <span class="card-number">2026</span>
+        </div>
+        <div class="card-body">
+          <h4>Years of Evolution</h4>
+          <p>Foco em stack moderna, performance e design.</p>
+        </div>
+        <div class="card-arrow">↗</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PROJETOS ── -->
+<section id="projetos">
+  <p class="section-eyebrow">Trabalhos</p>
+  <h2 class="section-title">Projetos em destaque</h2>
+
+  <div class="showcase-tabs">
+    <button class="showcase-tab active" data-tab="projetos-tab">Projetos</button>
+    <button class="showcase-tab" data-tab="certificacoes-tab">Certificações</button>
+    <button class="showcase-tab" data-tab="techstack-tab">Tech Stack</button>
+  </div>
+
+  <!-- PROJETOS -->
+  <div class="showcase-panel active" id="projetos-tab">
+    <div class="showcase-grid">
+
+      <div class="showcase-card reveal">
+        <div class="showcase-img">
+          <img src="src/imgs/swot.png" alt="Space Connect">
+        </div>
+        <div class="showcase-card-content">
+          <div class="showcase-card-header">
+            <span class="showcase-icon">🚀</span>
+            <span class="showcase-number">001</span>
+          </div>
+          <h3 class="showcase-card-title">Space Connect</h3>
+          <p class="showcase-card-desc">Plataforma de alertas de enchentes baseada em dados do satélite SWOT da NASA/CNES. Landing page com identidade visual espacial e monitoramento hidrológico.</p>
+          <div class="showcase-card-bottom">
+            <a href="#" class="showcase-link showcase-link--live">🎥 Live Demo</a>
+            <a href="#" class="showcase-link showcase-link--details">Details →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="showcase-card reveal">
+        <div class="showcase-img">
+          <img src="src/imgs/vinharia-agnello.png" alt="Vinharia Agnello">
+        </div>
+        <div class="showcase-card-content">
+          <div class="showcase-card-header">
+            <span class="showcase-icon">🍷</span>
+            <span class="showcase-number">002</span>
+          </div>
+          <h3 class="showcase-card-title">Vinharia Agnello</h3>
+          <p class="showcase-card-desc">Site institucional para vinharia com mais de 15 anos no mercado. Vinhos selecionados com armazenamento controlado e atendimento especializado.</p>
+          <div class="showcase-card-bottom">
+            <a href="https://leonardog738.github.io/Check-Point-Projeto-em-Grupo-Site-da-Vinharia-Agnello/" target="_blank" class="showcase-link showcase-link--live">🎥 Live Demo</a>
+            <a href="https://leonardog738.github.io/Check-Point-Projeto-em-Grupo-Site-da-Vinharia-Agnello/" target="_blank" class="showcase-link showcase-link--details">Details →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="showcase-card reveal">
+        <div class="showcase-img">
+          <img src="src/imgs/jovi.png" alt="Camera Jovi">
+        </div>
+        <div class="showcase-card-content">
+          <div class="showcase-card-header">
+            <span class="showcase-icon">🌐</span>
+            <span class="showcase-number">003</span>
+          </div>
+          <h3 class="showcase-card-title">Camera Jovi</h3>
+          <p class="showcase-card-desc">Protótipo de redesign de UX/UI para a câmera da empresa JOVI. Foco em usabilidade, hierarquia visual e experiência de produto.</p>
+          <div class="showcase-card-bottom">
+            <a href="https://leonardog738.github.io/amerajovi/" target="_blank" class="showcase-link showcase-link--live">🎥 Live Demo</a>
+            <a href="https://leonardog738.github.io/amerajovi/" target="_blank" class="showcase-link showcase-link--details">Details →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CERTIFICAÇÕES -->
+  <div class="showcase-panel" id="certificacoes-tab">
+    <div class="showcase-grid">
+
+      <div class="showcase-card reveal">
+        <div class="showcase-card-content">
+          <div class="showcase-card-header">
+            <span class="showcase-icon">🎓</span>
+            <span class="showcase-number">C01</span>
+          </div>
+          <h3 class="showcase-card-title">Meta Front-End Developer</h3>
+          <p class="showcase-card-desc">Especialização em desenvolvimento front-end com React, cobrindo componentes, hooks, roteamento e boas práticas de acessibilidade.</p>
+          <div class="showcase-card-bottom">
+            <span class="showcase-link showcase-link--live" style="cursor:default;">Coursera — Meta</span>
+            <span class="showcase-link showcase-link--details" style="cursor:default;">Set 2023</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="showcase-card reveal">
+        <div class="showcase-card-content">
+          <div class="showcase-card-header">
+            <span class="showcase-icon">☁️</span>
+            <span class="showcase-number">C02</span>
+          </div>
+          <h3 class="showcase-card-title">AWS Cloud Practitioner</h3>
+          <p class="showcase-card-desc">Fundamentos de computação em nuvem AWS: serviços core, segurança, arquitetura, precificação e suporte.</p>
+          <div class="showcase-card-bottom">
+            <span class="showcase-link showcase-link--live" style="cursor:default;">Amazon Web Services</span>
+            <span class="showcase-link showcase-link--details" style="cursor:default;">Nov 2023</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="showcase-card reveal">
+        <div class="showcase-card-content">
+          <div class="showcase-card-header">
+            <span class="showcase-icon">🐍</span>
+            <span class="showcase-number">C03</span>
+          </div>
+          <h3 class="showcase-card-title">Python for Data Science</h3>
+          <p class="showcase-card-desc">Análise de dados com Python: Pandas, NumPy, Matplotlib e introdução a machine learning aplicado.</p>
+          <div class="showcase-card-bottom">
+            <span class="showcase-link showcase-link--live" style="cursor:default;">IBM — Coursera</span>
+            <span class="showcase-link showcase-link--details" style="cursor:default;">Jan 2024</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TECH STACK -->
+  <div class="showcase-panel" id="techstack-tab">
+    <div class="stack-sections">
+
+      <div class="stack-section">
+        <h2 class="stack-section-title">Front-end</h2>
+        <div class="stack-grid">
+          <div class="stack-card reveal">
+            <div class="stack-icon-wrap"><img src="src/imgs/react.png" alt="React"></div>
+            <span class="stack-name">React</span>
+          </div>
+          <div class="stack-card reveal">
+            <div class="stack-icon-wrap"><img src="src/imgs/js.png" alt="JavaScript"></div>
+            <span class="stack-name">JavaScript</span>
+          </div>
+          <div class="stack-card reveal">
+            <div class="stack-icon-wrap"><img src="src/imgs/css-3.png" alt="CSS"></div>
+            <span class="stack-name">CSS</span>
+          </div>
+          <div class="stack-card reveal">
+            <div class="stack-icon-wrap"><img src="src/imgs/html.png" alt="HTML"></div>
+            <span class="stack-name">HTML</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-section">
+        <h2 class="stack-section-title">Back-end</h2>
+        <div class="stack-grid">
+          <div class="stack-card reveal">
+            <div class="stack-icon-wrap"><img src="src/imgs/node-js.png" alt="Node.js"></div>
+            <span class="stack-name">Node.js</span>
+          </div>
+          <div class="stack-card reveal">
+            <div class="stack-icon-wrap"><img src="src/imgs/php.png" alt="PHP"></div>
+            <span class="stack-name">PHP</span>
+          </div>
+          <div class="stack-card reveal">
+            <div class="stack-icon-wrap"><img src="src/imgs/java.png" alt="java"></div>
+            <span class="stack-name">JAVA</span>
+          </div>
+          <div class="stack-card reveal">
+            <div class="stack-icon-wrap"><img src="src/imgs/python.png" alt="Python"></div>
+            <span class="stack-name">Python</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-section">
+        <h2 class="stack-section-title">Database</h2>
+        <div class="stack-grid">
+          <div class="stack-card reveal">
+            <div class="stack-icon-wrap"><img src="src/imgs/SQLServerManagementStudio.png" alt="SQL Server"></div>
+            <span class="stack-name">SQL Server</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-section">
+        <h2 class="stack-section-title">Creative & Tools</h2>
+        <div class="stack-grid">
+          <div class="stack-card reveal">
+            <div class="stack-icon-wrap"><img src="src/imgs/Figma.png" alt="Figma"></div>
+            <span class="stack-name">Figma</span>
+          </div>
+          <div class="stack-card reveal">
+            <div class="stack-icon-wrap"><img src="src/imgs/visual-code.webp" alt="VS Code"></div>
+            <span class="stack-name">VS Code</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTATO ── -->
+<section id="contato">
+  <div class="contact-box reveal">
+    <p class="section-eyebrow" style="justify-content: center;">Contato</p>
+    <h2 class="contact-big">Vamos trabalhar juntos?</h2>
+    <p class="contact-sub">Aberto a colaborações, freelas e oportunidades. Manda uma mensagem.</p>
+    <a href="mailto:leonardo@email.com" class="btn-primary">leonardo@email.com</a>
+    <div class="contact-links">
+      <a href="#" class="contact-link">GitHub</a>
+      <a href="#" class="contact-link">LinkedIn</a>
+      <a href="#" class="contact-link">Instagram</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span>© 2026 Leonardo</span>
+  <span>Desenvolvido com cuidado</span>
+</footer>
+
+<script>
+  // ── THEME TOGGLE ──
+  const themeToggle = document.getElementById('themeToggle');
+  const savedTheme = localStorage.getItem('theme') || 'winter';
+
+  if (savedTheme === 'summer') {
+    document.body.classList.add('summer');
+    themeToggle.classList.add('summer');
+    themeToggle.querySelector('.toggle-circle').innerHTML = '<img style="width:80%;height:80%;padding:2%;" src="src/imgs/sun.png" alt="">';
+  }
+
+  themeToggle.addEventListener('click', () => {
+    const isSummer = document.body.classList.contains('summer');
+    if (isSummer) {
+      document.body.classList.remove('summer');
+      themeToggle.classList.remove('summer');
+      themeToggle.querySelector('.toggle-circle').innerHTML = '<img style="width:80%;height:80%;" src="src/imgs/floco-de-neve.png" alt="">';
+      localStorage.setItem('theme', 'winter');
+    } else {
+      document.body.classList.add('summer');
+      themeToggle.classList.add('summer');
+      themeToggle.querySelector('.toggle-circle').innerHTML = '<img style="width:80%;height:80%;padding:2%;" src="src/imgs/fire.png" alt="">';
+      localStorage.setItem('theme', 'summer');
+    }
+  });
+
+  // ── WELCOME SCREEN ──
+  const welcomeTextContent = "Welcome to my portfolio";
+  const welcomeText = document.getElementById("welcomeText");
+  const welcomeOverlay = document.getElementById("welcomeOverlay");
+  let welcomeIndex = 0;
+  let animationStarted = false;
+
+  function typeWriterWelcome() {
+    if (welcomeIndex < welcomeTextContent.length) {
+      welcomeText.textContent += welcomeTextContent.charAt(welcomeIndex);
+      welcomeIndex++;
+      setTimeout(typeWriterWelcome, 75);
+    } else {
+      setTimeout(transitionToPortfolio, 3200);
+    }
+  }
+
+  function transitionToPortfolio() {
+    if (animationStarted) return;
+    animationStarted = true;
+    welcomeOverlay.classList.add("fade-out");
+    setTimeout(() => {
+      welcomeOverlay.style.display = "none";
+      window.scrollTo(0, 0);
+      setTimeout(handleHeroTypewriter, 200);
+    }, 900);
+  }
+
+  typeWriterWelcome();
+  welcomeOverlay.addEventListener("click", transitionToPortfolio);
+
+  // ── HERO TYPEWRITER ──
+  const words = ["Full Stack", "Front End", "Back End"];
+  const typewriterTarget = document.getElementById("typewriterTarget");
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function handleHeroTypewriter() {
+    const currentWord = words[wordIndex];
+    if (isDeleting) {
+      typewriterTarget.textContent = currentWord.substring(0, charIndex - 1);
+      charIndex--;
+      if (charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(handleHeroTypewriter, 300);
+        return;
+      }
+      setTimeout(handleHeroTypewriter, 55);
+    } else {
+      typewriterTarget.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
+      if (charIndex === currentWord.length) {
+        isDeleting = true;
+        setTimeout(handleHeroTypewriter, 2200);
+        return;
+      }
+      setTimeout(handleHeroTypewriter, 110);
+    }
+  }
+
+  // ── SHOWCASE TABS ──
+  const tabs = document.querySelectorAll('.showcase-tab');
+  const panels = document.querySelectorAll('.showcase-panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+    });
+  });
+
+  // ── SCROLL REVEAL ──
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 80);
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+
+</body>
+</html>
