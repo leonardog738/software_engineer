@@ -93,13 +93,13 @@
     Desenvolvedor <strong id="typewriterTarget"></strong><span class="typed-cursor">|</span>
   </p>
 
-    
+
   <div class="about-container">
     <div class="about-main-block">
       <div class="about-text-content">
         <p class="about-hello">Olá, eu sou</p>
         <p class="about-description">
-          Desenvolvedor Full Stack e estudante na FIAP. Construo sistemas web complexos, dashboards interativos e dispositivos inteligentes com Arduino. Meu foco está em unir código limpo com interfaces marcantes que fazem sentido para quem as usa.
+          Desenvolvedor Full Stack e estudante na FIAP. Construo sistemas web complexos e dashboards interativos. Unindo código limpo com interfaces marcantes que fazem sentido para quem as usa.
         </p>
         <div class="about-actions">
           <a href="#projetos" class="btn">Ver projetos</a>
@@ -124,7 +124,7 @@
           <span class="card-number">4+</span>
         </div>
         <div class="card-body">
-          <h4>Total Projects</h4>
+          <h4>Total de Projetos</h4>
           <p>Soluções ponta a ponta do back ao front-end.</p>
         </div>
         <div class="card-arrow">↗</div>
@@ -185,7 +185,15 @@
           <p class="showcase-card-desc">Plataforma de alertas de enchentes baseada em dados do satélite SWOT da NASA/CNES. Landing page com identidade visual espacial e monitoramento hidrológico.</p>
           <div class="showcase-card-bottom">
             <a href="#" class="showcase-link showcase-link--live">🎥 Live Demo</a>
-            <a href="#" class="showcase-link showcase-link--details">Details →</a>
+            <a href="#" class="showcase-link showcase-link--details proj-open"
+              data-number="001"
+              data-badge="🚀"
+              data-title="Space Connect"
+              data-desc="Plataforma de alertas de enchentes baseada em dados do satélite SWOT da NASA/CNES. Desenvolvida com Python, earthaccess e a API Hydrocron para extração de dados hidrológicos. A landing page conta com identidade visual espacial, animações CSS e design responsivo."
+              data-stack="Python,HTML,CSS,earthaccess,Hydrocron API,PostGIS"
+              data-live="https://space-c0nnect.github.io/swot_web/"
+              data-github="aa"
+              data-imgs="src/imgs/swot.png,src/imgs/swot2.png,src/imgs/swot3.png">Details →</a>
           </div>
         </div>
       </div>
@@ -236,32 +244,22 @@
       <div class="showcase-card reveal">
         <div class="showcase-card-content">
           <div class="showcase-card-header">
-            <span class="showcase-icon">🎓</span>
+            <span class="showcase-icon"><img style="height: 40px;" src="src/imgs/java.png" alt="java"></span>
             <span class="showcase-number">C01</span>
           </div>
-          <h3 class="showcase-card-title">Meta Front-End Developer</h3>
-          <p class="showcase-card-desc">Especialização em desenvolvimento front-end com React, cobrindo componentes, hooks, roteamento e boas práticas de acessibilidade.</p>
+          <h3 class="showcase-card-title">Java: criando a sua primeira aplicação</h3>
+          <p class="showcase-card-desc">Capacitação nos fundamentos da linguagem Java utilizando a IDE IntelliJ. Desenvolvimento de lógica de programação (estruturas condicionais e de repetição), manipulação de tipos de dados e controle de fluxo com entrada de dados via console.</p>
           <div class="showcase-card-bottom">
-            <span class="showcase-link showcase-link--live" style="cursor:default;">Coursera — Meta</span>
-            <span class="showcase-link showcase-link--details" style="cursor:default;">Set 2023</span>
+            <span class="showcase-link showcase-link--live" style="cursor:default;">ALURA</span>
+            <a class="showcase-link showcase-link--details cert-open"
+              data-src="src/arquivos/Curso Java_criando_Alura.pdf"
+              data-title="Java: criando a sua primeira aplicação — Alura"
+              style="cursor:pointer;">abrir</a>
+              <span class="showcase-link showcase-link--details" style="cursor:default;">Jun 2026</span>
           </div>
         </div>
       </div>
-
-      <div class="showcase-card reveal">
-        <div class="showcase-card-content">
-          <div class="showcase-card-header">
-            <span class="showcase-icon">☁️</span>
-            <span class="showcase-number">C02</span>
-          </div>
-          <h3 class="showcase-card-title">AWS Cloud Practitioner</h3>
-          <p class="showcase-card-desc">Fundamentos de computação em nuvem AWS: serviços core, segurança, arquitetura, precificação e suporte.</p>
-          <div class="showcase-card-bottom">
-            <span class="showcase-link showcase-link--live" style="cursor:default;">Amazon Web Services</span>
-            <span class="showcase-link showcase-link--details" style="cursor:default;">Nov 2023</span>
-          </div>
-        </div>
-      </div>
+      
 
       <div class="showcase-card reveal">
         <div class="showcase-card-content">
@@ -379,6 +377,67 @@
   <span>Desenvolvido com cuidado</span>
 </footer>
 
+
+<!-- ── CERTIFICATE MODAL ── -->
+<div class="cert-modal" id="certModal" role="dialog" aria-modal="true">
+  <div class="cert-modal-backdrop" id="certBackdrop"></div>
+  <div class="cert-modal-box">
+    <div class="cert-modal-header">
+      <span class="cert-modal-title" id="certModalTitle"></span>
+      <button class="cert-modal-close" id="certClose" aria-label="Fechar">✕</button>
+    </div>
+    <div class="cert-modal-body">
+      <canvas id="certCanvas"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- ── PROJECT MODAL ── -->
+<div class="proj-modal" id="projModal" role="dialog" aria-modal="true">
+  <div class="proj-modal-backdrop" id="projBackdrop"></div>
+  <div class="proj-modal-box">
+    <button class="proj-modal-close" id="projClose" aria-label="Fechar">✕</button>
+
+    <div class="proj-gallery">
+      <button class="gallery-arrow gallery-arrow--prev" id="galleryPrev">&#8592;</button>
+      <div class="gallery-track" id="galleryTrack"></div>
+      <button class="gallery-arrow gallery-arrow--next" id="galleryNext">&#8594;</button>
+      <div class="gallery-dots" id="galleryDots"></div>
+    </div>
+
+    <div class="proj-modal-content">
+      <div class="proj-modal-meta">
+        <span class="proj-modal-number" id="projModalNumber"></span>
+        <span class="proj-modal-badge" id="projModalBadge"></span>
+      </div>
+      <h2 class="proj-modal-title" id="projModalTitle"></h2>
+      <p class="proj-modal-desc" id="projModalDesc"></p>
+      <div class="proj-modal-stack" id="projModalStack"></div>
+      <div class="proj-modal-actions">
+        <a href="#" class="proj-live-btn" id="projModalLive" target="_blank">
+          <span class="live-dot"></span>
+          Ver Demo ao Vivo ↗
+        </a>
+        <a href="#" class="proj-github-btn" id="projModalGithub" target="_blank">
+          <svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 
+                    0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755
+                    -1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 
+                    3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 
+                    0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 
+                    3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 
+                    2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 
+                    1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 
+                    2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 
+                    24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   // ── THEME TOGGLE ──
   const themeToggle = document.getElementById('themeToggle');
@@ -493,6 +552,182 @@
   }, { threshold: 0.12 });
 
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // ── CERTIFICATE MODAL ──
+  const certModal    = document.getElementById('certModal');
+  const certCanvas   = document.getElementById('certCanvas');
+  const certClose    = document.getElementById('certClose');
+  const certBackdrop = document.getElementById('certBackdrop');
+  const certTitle    = document.getElementById('certModalTitle');
+  const certBody     = certCanvas.parentElement;
+
+  // Carrega PDF.js via CDN
+  const PDFJS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+
+  function loadPDFJS(cb) {
+    if (window.pdfjsLib) { cb(); return; }
+    const s = document.createElement('script');
+    s.src = PDFJS_URL;
+    s.onload = () => {
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+        'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+      cb();
+    };
+    document.head.appendChild(s);
+  }
+
+  function openCertModal(src, title) {
+    certTitle.textContent = title || 'Certificado';
+    certCanvas.style.display = 'none';
+    certBody.innerHTML = '<span class="cert-modal-loading">Carregando...</span>';
+    certBody.appendChild(certCanvas);
+
+    certModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    loadPDFJS(() => {
+      pdfjsLib.getDocument(src).promise.then(pdf => {
+        pdf.getPage(1).then(page => {
+          const viewport = page.getViewport({ scale: 2 });
+          certCanvas.width  = viewport.width;
+          certCanvas.height = viewport.height;
+          certCanvas.style.display = 'block';
+
+          const loadingEl = certBody.querySelector('.cert-modal-loading');
+          if (loadingEl) loadingEl.remove();
+
+          page.render({
+            canvasContext: certCanvas.getContext('2d'),
+            viewport
+          });
+        });
+      });
+    });
+  }
+
+  function closeCertModal() {
+    certModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.cert-open').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      openCertModal(btn.dataset.src, btn.dataset.title);
+    });
+  });
+
+  certClose.addEventListener('click', closeCertModal);
+  certBackdrop.addEventListener('click', closeCertModal);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCertModal(); });
+
+  // ── PROJECT MODAL ──
+const projModal    = document.getElementById('projModal');
+const projBackdrop = document.getElementById('projBackdrop');
+const projClose    = document.getElementById('projClose');
+const galleryTrack = document.getElementById('galleryTrack');
+const galleryDots  = document.getElementById('galleryDots');
+const galleryPrev  = document.getElementById('galleryPrev');
+const galleryNext  = document.getElementById('galleryNext');
+
+let galleryImages = [];
+let galleryIndex  = 0;
+
+function buildGallery(imgs) {
+  galleryImages = imgs;
+  galleryIndex  = 0;
+  galleryTrack.innerHTML = '';
+  galleryDots.innerHTML  = '';
+
+  imgs.forEach((src, i) => {
+    const slide = document.createElement('div');
+    slide.className = 'gallery-slide';
+    slide.innerHTML = `<img src="${src}" alt="Screenshot ${i + 1}" loading="lazy">`;
+    galleryTrack.appendChild(slide);
+
+    const dot = document.createElement('button');
+    dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Imagem ${i + 1}`);
+    dot.addEventListener('click', () => goTo(i));
+    galleryDots.appendChild(dot);
+  });
+
+  updateGallery();
+}
+
+function goTo(index) {
+  galleryIndex = index;
+  updateGallery();
+}
+
+function updateGallery() {
+  galleryTrack.style.transform = `translateX(-${galleryIndex * 100}%)`;
+  document.querySelectorAll('.gallery-dot').forEach((d, i) =>
+    d.classList.toggle('active', i === galleryIndex)
+  );
+  galleryPrev.classList.toggle('hidden', galleryIndex === 0);
+  galleryNext.classList.toggle('hidden', galleryIndex === galleryImages.length - 1);
+  if (galleryImages.length <= 1) {
+    galleryPrev.classList.add('hidden');
+    galleryNext.classList.add('hidden');
+    galleryDots.style.display = 'none';
+  } else {
+    galleryDots.style.display = 'flex';
+  }
+}
+
+galleryPrev.addEventListener('click', () => { if (galleryIndex > 0) goTo(galleryIndex - 1); });
+galleryNext.addEventListener('click', () => { if (galleryIndex < galleryImages.length - 1) goTo(galleryIndex + 1); });
+
+document.addEventListener('keydown', e => {
+  if (!projModal.classList.contains('open')) return;
+  if (e.key === 'ArrowLeft')  goTo(Math.max(0, galleryIndex - 1));
+  if (e.key === 'ArrowRight') goTo(Math.min(galleryImages.length - 1, galleryIndex + 1));
+  if (e.key === 'Escape') closeProjModal();
+});
+
+function openProjModal(btn) {
+  const imgs   = btn.dataset.imgs.split(',').map(s => s.trim());
+  const stack  = btn.dataset.stack.split(',').map(s => s.trim());
+  const live   = btn.dataset.live   || '';
+  const github = btn.dataset.github || '';
+
+  document.getElementById('projModalNumber').textContent = btn.dataset.number || '';
+  document.getElementById('projModalBadge').textContent  = btn.dataset.badge  || '';
+  document.getElementById('projModalTitle').textContent  = btn.dataset.title  || '';
+  document.getElementById('projModalDesc').textContent   = btn.dataset.desc   || '';
+
+  const stackEl = document.getElementById('projModalStack');
+  stackEl.innerHTML = stack.map(t => `<span class="stack-tag">${t}</span>`).join('');
+
+  const liveBtn = document.getElementById('projModalLive');
+  if (live) { liveBtn.href = live; liveBtn.classList.remove('hidden'); }
+  else { liveBtn.classList.add('hidden'); }
+
+  const githubBtn = document.getElementById('projModalGithub');
+  if (github) { githubBtn.href = github; githubBtn.classList.remove('hidden'); }
+  else { githubBtn.classList.add('hidden'); }
+
+  buildGallery(imgs);
+
+  projModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProjModal() {
+  projModal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.proj-open').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    openProjModal(btn);
+  });
+});
+
+projClose.addEventListener('click', closeProjModal);
+projBackdrop.addEventListener('click', closeProjModal);
 </script>
 
 </body>
